@@ -1,1 +1,1 @@
-# [calneideck.me](www.calneideck.me)
+# [calneideck.me](http://www.calneideck.me)
