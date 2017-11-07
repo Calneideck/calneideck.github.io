@@ -21,9 +21,13 @@ h1 {
   font-size: 30pt;
   margin-bottom: 5px;
 }
+h2 {
+  font-weight: 400;
+}
 h3 {
   text-align: center;
   margin: 0 0 8px 0;
+  font-weight: 400;
 }
 .center {
   margin-top: 0;
