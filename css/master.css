@@ -6,6 +6,7 @@ body {
   margin: 0;
   background-color: #333;
   background-image: url("../img/back.png");
+  background-attachment: fixed;
 }
 p,
 h1,
