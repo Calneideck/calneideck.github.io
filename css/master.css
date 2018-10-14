@@ -1,149 +1,263 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  background-color: #333;
-  background-image: url("../img/back.png");
-  background-attachment: fixed;
+  background-color: #070715;
+  overflow: hidden;
+  -webkit-perspective: 800px;
+          perspective: 800px;
 }
 p,
 h1,
 h2,
-h3 {
+h3,
+td {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
 }
 h1 {
   text-align: center;
-  font-weight: 100;
   font-size: 30pt;
   margin-bottom: 5px;
 }
+h1,
 h2 {
-  font-weight: 400;
-}
-h3 {
-  text-align: center;
-  margin: 0 0 8px 0;
-  font-weight: 400;
-}
-.center {
   margin-top: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+.socials {
   text-align: center;
 }
-#email {
-  padding-bottom: 4px;
-  margin-right: 15px;
+.socials a:first-child {
+  margin-right: 20px;
 }
-#grid,
-.inset {
-  max-width: 1200px;
-  padding: 0 30px;
-  margin: auto;
+.socials img {
+  width: 25px;
+}
+td {
+  vertical-align: top;
+  padding-bottom: 1em;
+}
+td:last-child {
+  text-align: right;
+}
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.box p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.box p:last-child {
+  text-align: right;
+}
+.box:last-child p {
+  margin-bottom: 0;
+}
+#fav-colour {
+  color: #0cf;
+  cursor: pointer;
+}
+#canvas-holder {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.left,
+.right {
+  position: absolute;
   overflow: auto;
+  padding: 20px;
+  background-color: rgba(180,89,249,0.1);
+  border: 1px solid #fff;
 }
-#grid {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
+.left {
+  width: 500px;
+  left: calc(25% - 250px);
+  top: calc(50% - 235px);
 }
-#about {
-  margin-bottom: 15px;
+.right {
+  width: 600px;
+  left: calc(75% - 300px);
+  top: calc(50% - 305px);
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
 }
-.project-desc {
-  margin: 1em auto;
+#projects {
+  overflow: hidden;
+  float: left;
+  white-space: nowrap;
+  height: 100%;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
-h2,
-h2.inset {
-  margin-top: 0;
-  margin-bottom: 15px;
+.left-holder,
+.right-holder {
+  width: 50px;
+  height: 534px;
+  position: relative;
+}
+.left-holder,
+.middle-holder {
+  float: left;
+}
+.middle-holder {
+  overflow: hidden;
+  width: 498px;
+  height: 534px;
+  transition: all 0.2s linear;
+}
+.right-holder {
+  float: right;
+}
+.left-holder img,
+.right-holder img {
+  cursor: pointer;
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 25px);
+  transition: all 0.2s linear;
+}
+.fade {
+  opacity: 0;
+  cursor: initial !important;
+}
+.left-holder img:hover,
+.right-holder img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.right h2 {
+  text-align: center;
+  margin: 0;
 }
 .cell {
-  float: left;
-  width: 100%;
-  padding: 10px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  background-color: #fff;
-  page-break-inside: avoid;
+  overflow: auto;
+  width: 500px;
+  padding: 5px;
+  display: inline-block;
+  white-space: initial;
+  vertical-align: top;
 }
-.cell:nth-child(3n) {
-  margin-right: 0;
-}
-.cell:nth-child(3n + 4) {
-  clear: both;
+.cell h3 {
+  text-align: center;
+  margin: 10px 0;
 }
 .cell img {
   width: 100%;
 }
-p.desc {
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: text-shadow 0.2s linear;
+}
+a:hover {
+  text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.2em #fff, 0 0 0.4em #0bf, 0 0 0.2em #0bf, 0 0 0.2em #f0f, 0 0 1em #0bf, 0 0 1.2em #cbf;
+}
+.desc {
   font-style: italic;
 }
-p.link {
-  margin-bottom: 0;
-}
-.cell p,
-.cell h3,
-.cell a {
-  color: #000;
-}
-@media screen and (max-width: 900px) {
-  #grid,
-  .inset {
-    padding: 0 20px;
+@media screen and (min-width: 1040px) and (max-width: 1280px) {
+  .left {
+    width: 400px;
+    top: calc(50% - 265px);
   }
-  #grid {
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
+  .right {
+    width: 500px;
+    left: calc(75% - 250px);
+  }
+  .middle-holder {
+    width: 398px;
   }
   .cell {
-    margin-right: 20px;
-  }
-  .cell:nth-child(3n) {
-    margin-right: 20px;
-  }
-  .cell:nth-child(2n) {
-    margin-right: 0;
-  }
-  .cell:nth-child(2n + 3) {
-    clear: both !important;
-  }
-  .cell:nth-child(3n + 4) {
-    clear: none;
+    width: 400px;
   }
 }
-/* MOBILE VIEW */
-@media screen and (max-width: 700px) {
-  h1 {
-    font-size: 24pt;
+@media screen and (min-width: 900px) and (max-width: 1039px) {
+  .left {
+    width: 300px;
+    left: calc(25% - 220px);
+    top: calc(50% - 326px);
   }
-  h2 {
-    font-size: 12pt;
+  .right {
+    width: 480px;
+    left: calc(75% - 270px);
   }
-  h3 {
+  .middle-holder {
+    width: 378px;
+  }
+  .cell {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 899px) {
+  body {
+    overflow: initial;
+    height: calc(100% - 15px);
+  }
+  .left {
+    position: initial;
+    width: calc(100% - 30px);
+    margin: 15px;
+    -webkit-transform: initial !important;
+            transform: initial !important;
+  }
+  .right {
+    position: relative;
+    top: initial !important;
+    left: initial;
+    width: calc(100% - 30px);
+    margin: 15px;
+    -webkit-transform: initial !important;
+            transform: initial !important;
+  }
+  .socials {
+    margin: 5px 0;
+  }
+  .socials img {
+    width: 20px;
+  }
+  .left h1 {
+    font-size: 20pt;
+  }
+  .left p {
     font-size: 11pt;
   }
-  p {
-    font-size: 10pt;
+  .left-holder {
+    position: absolute;
+    height: 50px;
+    top: 0;
+    left: 0;
   }
-  #grid,
-  .inset {
-    padding: 0 15px;
+  .right-holder {
+    position: absolute;
+    height: 50px;
+    top: 0;
+    right: 0;
   }
-  #grid {
-    -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1;
+  .left-holder img,
+  .right-holder img {
+    top: 0;
   }
-  .cell {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  .cell:nth-child(3n) {
-    margin-right: 0;
+  .middle-holder {
+    width: calc(100% - 30px);
+    margin: 0 15px;
   }
 }
