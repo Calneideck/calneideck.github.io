@@ -1,17 +1,11 @@
 var index = 0;
 var projects = $('#projects');
-var left = $('.left');
 var right = $('.right');
 var leftHolder = $('.left-holder');
 var middleHolder = $('.middle-holder');
 var rightHolder = $('.right-holder');
 var projectCount;
 var cellSize;
-
-var moveAmount = 100;
-var rotateAmount = 25;
-var rotateXAmount = 20;
-var skewAmount = -5;
 
 $(window).on('load', function() {
     if (window.width < 900) {
@@ -39,23 +33,6 @@ $(window).on('resize', function() {
     });
 
     adjustHeight();
-});
-
-$(window).on('mousemove', function(e) {
-    if (window.width < 900)
-        return;
-
-    var pct = e.clientX / window.width;
-    var yPct = e.clientY / window.height;
-    yPct = -((yPct * 2) - 1);
-    var leftPct =  pct * pct;
-    var rightPct =  (1 - pct) * (1 - pct);
-    left.css({
-        transform: 'translateX(' + leftPct * moveAmount + 'px) rotateX(' + yPct * (leftPct + 0.1) * rotateXAmount + 'deg) rotateY(' + leftPct * rotateAmount + 'deg) skewY(' + -leftPct * skewAmount + 'deg)'
-    });
-    right.css({
-        transform: 'translateX(-' + rightPct * moveAmount + 'px) rotateX(' + yPct * (rightPct + 0.1) * rotateXAmount + 'deg) rotateY(' + -rightPct * rotateAmount + 'deg) skewY(' + -rightPct * skewAmount + 'deg)'
-    });
 });
 
 $('#previous').click(function() {
